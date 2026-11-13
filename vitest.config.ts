@@ -5,6 +5,6 @@ export default defineConfig({
     environment: 'node',
     globals: true,
     passWithNoTests: true,
-    exclude: [...configDefaults.exclude, '**/__drafts__/**'],
+    exclude: [...configDefaults.exclude, '**/__drafts__/**', 'dist/**'],
   },
 });
