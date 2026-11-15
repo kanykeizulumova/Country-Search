@@ -1,11 +1,11 @@
 export class HttpError extends Error {
-    public status: number;
+  public status: number;
 
-    constructor(status: number, message?: string) {
-        super(message ?? `Ошибка сервера: статус ${status}`);
-        this.status = status;
-        this.name = 'HttpError';
+  constructor(status: number, message?: string) {
+    super(message ?? `Server error: status ${status}`);
+    this.status = status;
+    this.name = 'HttpError';
 
-        Object.setPrototypeOf(this, new.target.prototype);
-    }
+    Object.setPrototypeOf(this, new.target.prototype);
+  }
 }

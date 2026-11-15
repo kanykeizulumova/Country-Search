@@ -11,19 +11,19 @@ export function mapCountryResponse(raw: RawCountry): CountryData {
 
   const languages = Array.isArray(raw.languages)
     ? raw.languages
-      .map((lang) => lang.name)
-      .filter((langName): langName is string => Boolean(langName))
+        .map((lang) => lang.name)
+        .filter((langName): langName is string => Boolean(langName))
     : [];
 
   const currencies = Array.isArray(raw.currencies)
     ? raw.currencies
-      .map((currency) => {
-        if (currency.name && currency.code) {
-          return `${currency.name} (${currency.code})`;
-        }
-        return currency.name || currency.code || '';
-      })
-      .filter(Boolean)
+        .map((currency) => {
+          if (currency.name && currency.code) {
+            return `${currency.name} (${currency.code})`;
+          }
+          return currency.name || currency.code || '';
+        })
+        .filter(Boolean)
     : [];
 
   return {

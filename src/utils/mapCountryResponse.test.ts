@@ -12,9 +12,7 @@ describe('mapCountryResponse', () => {
       population: 47351567,
       area: 505992,
       borders: ['AND', 'FRA', 'GIB', 'PRT', 'MAR'],
-      languages: [
-        { name: 'Spanish', iso639_1: 'es', iso639_2: 'spa', nativeName: 'Español' },
-      ],
+      languages: [{ name: 'Spanish', iso639_1: 'es', iso639_2: 'spa', nativeName: 'Español' }],
       currencies: [{ code: 'EUR', name: 'Euro', symbol: '€' }],
     };
 
@@ -67,12 +65,7 @@ describe('mapCountryResponse', () => {
   it('handles multiple languages and currencies cleanly', () => {
     const raw: RawCountry = {
       name: 'Switzerland',
-      languages: [
-        { name: 'German' },
-        { name: 'French' },
-        { name: 'Italian' },
-        { name: 'Romansh' },
-      ],
+      languages: [{ name: 'German' }, { name: 'French' }, { name: 'Italian' }, { name: 'Romansh' }],
       currencies: [{ code: 'CHF', name: 'Swiss Franc', symbol: 'CHF' }],
     };
 
@@ -81,4 +74,3 @@ describe('mapCountryResponse', () => {
     expect(result.currencies).toEqual(['Swiss Franc (CHF)']);
   });
 });
-

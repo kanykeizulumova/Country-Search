@@ -34,4 +34,3 @@ export interface CountryData {
   area: number;
   borders: string[];
 }
-
